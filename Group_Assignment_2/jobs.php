@@ -31,6 +31,8 @@
   <!--Body of HTML Page-->
   <body>
 
+    <?php include 'header.inc'; ?>
+
     <hr>
 
         <article>
@@ -138,8 +140,9 @@
                 </section>
             </ol>
         </article>
-
-
     <hr>
+
+    <?php include 'footer.inc'; ?>
+
     </body>
 </html>
