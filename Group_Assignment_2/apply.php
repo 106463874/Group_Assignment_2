@@ -9,6 +9,19 @@
 
   <?php include 'header.inc'; ?>
   
+  <?php 
+    require_once('settings.php');
+    $conn = @mysqli_connect("localhost", "root", "", "learnova_db");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+        $query = "SELECT * FROM eoi";
+        $result = mysqli_query($dbconn, $query);
+        mysqli_close($conn);
+
+        
+    
+    }
+  
   <!--Body of HTML Page-->
 <body>
     <h1>Job Application Form</h1>
