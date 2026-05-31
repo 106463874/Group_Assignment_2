@@ -24,6 +24,40 @@
             border: #093c58 solid 2px;
             border-radius: 5px;
             margin: 0.5em;
+        }  
+       
+    <!--Search bar styles-->
+
+        .search-container {
+            margin: 1em 0.5em;
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
+
+        .search-container input[type="text"]{
+            padding: 0.5em;
+            font-size: 1em;
+            width: 300px;
+            border: 2px solid #093c58;
+            border-radius: 4px;
+        }
+
+        .search-container button:hover {
+            background-color: #0a5070;
+        }
+
+        .search-container a {
+            padding: 0.5em 1em;
+            color: #093c58;
+            text-decoration: underline;
+            font-size: 0.95em;
+        }
+
+        .no-results {
+            margin: 1em 0.5em;
+            color: #cc0000;
+            font-size: italic;
         }
         </style>
     </head>
