@@ -24,7 +24,8 @@
             border: #093c58 solid 2px;
             border-radius: 5px;
             margin: 0.5em;
-        }
+        }  
+        
         </style>
     </head>
 
@@ -38,8 +39,18 @@
         <article>
             <!--Jobs section-->
             <h2>Jobs Available</h2>
-
             
+            <!--Search Form-->
+            <form class="search-container" method="GET" action="jobs.php">
+                <input type="text"
+                name="search"
+                placeholder="Search jobs"
+                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']):";?>">
+            <button type="submit">Search</button>  
+            <?php if (!empty($_GET['search'])): ?>
+                    <a href="jobs.php">Clear</a>
+                <?php endif; ?>
+            </form>
             <?php
                 require_once "settings.php";
                 $db_conn = @mysqli_connect($host,$user,$pwd,$sql_db);
