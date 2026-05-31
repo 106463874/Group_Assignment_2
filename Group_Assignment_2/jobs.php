@@ -25,40 +25,7 @@
             border-radius: 5px;
             margin: 0.5em;
         }  
-       
-    <!--Search bar styles-->
-
-        .search-container {
-            margin: 1em 0.5em;
-            display: flex;
-            gap: 0.5em;
-            align-items: center;
-        }
-
-        .search-container input[type="text"]{
-            padding: 0.5em;
-            font-size: 1em;
-            width: 300px;
-            border: 2px solid #093c58;
-            border-radius: 4px;
-        }
-
-        .search-container button:hover {
-            background-color: #0a5070;
-        }
-
-        .search-container a {
-            padding: 0.5em 1em;
-            color: #093c58;
-            text-decoration: underline;
-            font-size: 0.95em;
-        }
-
-        .no-results {
-            margin: 1em 0.5em;
-            color: #cc0000;
-            font-size: italic;
-        }
+        
         </style>
     </head>
 
@@ -72,8 +39,18 @@
         <article>
             <!--Jobs section-->
             <h2>Jobs Available</h2>
-
             
+            <!--Search Form-->
+            <form class="search-container" method="GET" action="jobs.php">
+                <input type="text"
+                name="search"
+                placeholder="Search jobs"
+                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']):";?>">
+            <button type="submit">Search</button>  
+            <?php if (!empty($_GET['search'])): ?>
+                    <a href="jobs.php">Clear</a>
+                <?php endif; ?>
+            </form>
             <?php
                 require_once "settings.php";
                 $db_conn = @mysqli_connect($host,$user,$pwd,$sql_db);
