@@ -45,7 +45,7 @@
                 <input type="text"
                 name="search"
                 placeholder="Search jobs"
-                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']) : "; ?>">
+                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']) : "; ?>"?>
             <button type="submit">Search</button>  
             <?php if (!empty($_GET['search'])): ?>
                     <a href="jobs.php">Clear</a>
